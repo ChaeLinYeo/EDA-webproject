@@ -4,4 +4,3 @@ bqplot
 pandas
 numpy
 matplotlib
-seaboard
