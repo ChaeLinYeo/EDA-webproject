@@ -1,9 +1,54 @@
-# How to deploy a simple Plotly Dash app on Heroku
+# Voila application deployed on Heroku
 
-* You can view the finished app on [Heroku](https://flying-dog.herokuapp.com/).
-* Take a moment to read my [Medium post about deploying Dash apps](https://medium.com/@austinlasseter/how-to-deploy-a-simple-plotly-dash-app-to-heroku-622a2216eb73).
-* I also have a gallery of simple Dash apps for learning [here](https://github.com/austinlasseter/plotly_dash_tutorial/blob/master/06%20Heroku%20examples/list%20of%20resources.md).
-* If you'd like to learn even more about Plotly Dash, check out my [tutorial repo](https://github.com/austinlasseter/plotly_dash_tutorial) on github!.
-* If you'd like to tinker with the colors of your app, try using HEX codes from [HTML Color Codes](https://htmlcolorcodes.com/).
-* The `assets` folder contains a file called `favicon.ico` -- you can find and download customized favicons [here](https://www.favicon.cc/). Just replace the current favicon with a new one.
-* Plotly Dash apps can only be viewed in a modern browser (like Chrome or Mozilla). They won't render in antediluvian browsers such as Microsoft.
+This is an example of Voila deployed on Heroku, try it out: https://voila-heroku-demo.herokuapp.com
+
+## How to deploy your own?
+
+1. First, create an Heroku account (free account is fine for testing)
+
+2. Install Heroku on your machine: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
+
+2. Clone this repository, or create your own repository that follows the same structure:
+
+```bash
+git clone https://github.com/voila-dashboards/voila-heroku
+cd voila-heroku
+```
+
+3. Create your Notebook and put it in the `notebooks` directory
+
+5. Add the dependencies needed for running your Notebook in the `requirements.txt` file
+
+6. Edit the `Procfile` file by replacing `notebooks/bqplot.ipynb` by the path to your awesome Notebook
+
+7. Commit everything
+
+```bash
+git commit -m "My awesome app on Heroku!"
+```
+
+8. Create the Heroku app:
+
+```bash
+heroku create
+```
+
+9. Now deploy your code:
+
+```bash
+git push heroku master
+```
+
+10. That's it! Easy right? Now you can open your app using:
+
+```bash
+
+heroku open
+```
+
+Note that this last command is only a handy shortcut for opening your browser following the right url, you can also do that manually.
+
+## Extra steps
+
+- You can rename your application on the Heroku website, in the applicaion settings. If you rename it, don't forget to update the remote repository doing `git remote remove heroku && git remote add heroku https://git.heroku.com/your-application-name.git`
+- You can add/remove/update voila command line arguments in the `Procfile` file, _e.g._ you can use the dark theme by adding `--theme=dark`
