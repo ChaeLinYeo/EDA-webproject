@@ -1,3 +1,7 @@
 voila
 voila-material
 bqplot
+pandas
+numpy
+matplotlib
+seaboard
